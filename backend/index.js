@@ -10,6 +10,11 @@ dotenv.config({ path: path.resolve(__dirname, ".env") });
 const app = express();
 app.use(express.json());
 
+app.get("/", (req, res) => {
+    res.send("Hospital Patient API is running");
+});
+
+
 // Connect to MongoDB
 mongoose.connect(process.env.MONGO_URI)
 .then(() => console.log("MongoDB connected"))
